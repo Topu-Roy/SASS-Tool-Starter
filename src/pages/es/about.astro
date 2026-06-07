@@ -1,0 +1,9 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageRenderer from "../../components/PageRenderer.astro";
+import { getContent } from "../../i18n";
+const content = getContent(Astro.currentLocale || "es")!;
+---
+<Layout page="about" title={content.about.title} description={content.layout.description}>
+  <PageRenderer page="about" content={content.about} />
+</Layout>

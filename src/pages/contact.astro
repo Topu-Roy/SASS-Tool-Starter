@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageRenderer from "../components/PageRenderer.astro";
+import { getContent } from "../i18n";
+const content = getContent(Astro.currentLocale || "en")!;
+---
+<Layout page="contact" title={content.contact.title} description={content.layout.description}>
+  <PageRenderer page="contact" content={content.contact} />
+</Layout>

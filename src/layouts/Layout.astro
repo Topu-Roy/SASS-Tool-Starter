@@ -1,0 +1,72 @@
+---
+import "../styles/global.css";
+import { SEO } from "astro-seo";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { locales, getHrefLang } from "../i18n";
+
+export interface Props {
+  page: string;
+  title: string;
+  description: string;
+}
+
+const { page, title, description } = Astro.props;
+const locale = Astro.currentLocale || "en";
+const site = new URL(Astro.site ?? "https://example.com");
+
+const pathParts = Astro.url.pathname.split("/").filter(Boolean);
+const pagePath =
+  locale === "en"
+    ? Astro.url.pathname
+    : "/" + pathParts.slice(1).join("/");
+const normalizedPagePath =
+  pagePath === "/" ? "/" : pagePath.endsWith("/") ? pagePath : pagePath + "/";
+
+const languageAlternates = locales.map((l) => ({
+  href: l === "en"
+    ? new URL(normalizedPagePath, site).href
+    : new URL(`/${l}${normalizedPagePath}`, site).href,
+  hrefLang: getHrefLang(l),
+}));
+---
+
+<!doctype html>
+<html lang={getHrefLang(locale)}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="preload"
+      href="/fonts/DMSans-VariableFont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <SEO
+      title={title}
+      description={description}
+      languageAlternates={languageAlternates}
+    />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        if (stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body
+    class="m-0 flex min-h-screen flex-col bg-white text-gray-900 antialiased dark:bg-canvas dark:text-ink"
+  >
+    <Nav page={page} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
