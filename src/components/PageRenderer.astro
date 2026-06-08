@@ -20,7 +20,7 @@ const { page, content } = Astro.props;
     <h1 class="text-display-md letter-spacing-display-md font-bold tracking-tight text-gray-900 dark:text-ink dark:lg:text-display-lg dark:xl:text-display-xl dark:2xl:text-display-xxl">
       {content.title}
     </h1>
-    <p class="mt-4 text-body-lg letter-spacing-body-lg text-gray-600 dark:text-ink-muted">
+    <p class="mt-4 break-words text-body-lg letter-spacing-body-lg text-gray-600 dark:text-ink-muted">
       {content.description}
     </p>
   </section>
@@ -31,7 +31,7 @@ const { page, content } = Astro.props;
     <h1 class="text-display-md letter-spacing-display-md text-gray-900 dark:text-ink">
       {content.title}
     </h1>
-    <p class="mt-4 text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
+    <p class="mt-4 break-words text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
       {content.content}
     </p>
   </section>
@@ -42,11 +42,11 @@ const { page, content } = Astro.props;
     <h1 class="text-display-md letter-spacing-display-md text-gray-900 dark:text-ink">
       {content.title}
     </h1>
-    <p class="mt-4 text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
+    <p class="mt-4 break-words text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
       {content.content}
     </p>
     {content.email && (
-      <p class="mt-4 text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
+      <p class="mt-4 break-words text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
         <strong>Email:</strong>{" "}
         <a
           href={`mailto:${content.email}`}
@@ -57,7 +57,7 @@ const { page, content } = Astro.props;
       </p>
     )}
     {content.phone && (
-      <p class="mt-4 text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
+      <p class="mt-4 break-words text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
         <strong>Phone:</strong> {content.phone}
       </p>
     )}
@@ -74,7 +74,7 @@ const { page, content } = Astro.props;
         {content.updated}
       </p>
     )}
-    <p class="mt-4 text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
+    <p class="mt-4 break-words text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
       {content.content}
     </p>
   </section>
@@ -90,7 +90,7 @@ const { page, content } = Astro.props;
         {content.updated}
       </p>
     )}
-    <p class="mt-4 text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
+    <p class="mt-4 break-words text-body letter-spacing-body text-gray-600 dark:text-ink-muted">
       {content.content}
     </p>
   </section>
@@ -101,5 +101,11 @@ const { page, content } = Astro.props;
     max-width: 48rem;
     margin: 0 auto;
     padding: 3rem 2rem;
+  }
+
+  @media (width < 640px) {
+    .page {
+      padding: 2rem 1rem;
+    }
   }
 </style>

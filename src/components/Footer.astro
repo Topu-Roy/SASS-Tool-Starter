@@ -10,13 +10,13 @@ if (!content) throw new Error(`Missing i18n content for locale: ${locale}`);
   class="border-t border-gray-200 bg-gray-50 dark:border-hairline-soft dark:bg-canvas"
 >
   <div
-    class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-16 sm:flex-row sm:justify-between sm:px-6"
+    class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-12 sm:flex-row sm:justify-between sm:py-16 sm:px-6"
   >
     <p class="text-caption letter-spacing-caption text-gray-500 dark:text-ink-muted">
       {content.footer.text}
     </p>
 
-    <div class="flex items-center gap-3">
+    <div class="flex flex-wrap items-center gap-3">
       <span class="text-caption letter-spacing-caption font-medium uppercase text-gray-400 dark:text-ink-muted">
         Lang:
       </span>

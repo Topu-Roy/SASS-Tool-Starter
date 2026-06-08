@@ -38,35 +38,35 @@
   --radius-pill: 100px;
   --radius-full: 9999px;
 
-  --text-display-xxl: 110px;
+  --text-display-xxl: clamp(3rem, 3rem + 3.875vw, 6.875rem);
   --text-display-xxl--line-height: 0.85;
   --text-display-xxl--font-weight: 500;
 
-  --text-display-xl: 85px;
+  --text-display-xl: clamp(2.5rem, 2.5rem + 2.813vw, 5.3125rem);
   --text-display-xl--line-height: 0.95;
   --text-display-xl--font-weight: 500;
 
-  --text-display-lg: 62px;
+  --text-display-lg: clamp(2rem, 2rem + 1.875vw, 3.875rem);
   --text-display-lg--line-height: 1;
   --text-display-lg--font-weight: 500;
 
-  --text-display-md: 32px;
+  --text-display-md: clamp(1.5rem, 1.5rem + 0.5vw, 2rem);
   --text-display-md--line-height: 1.13;
   --text-display-md--font-weight: 500;
 
-  --text-headline: 22px;
+  --text-headline: clamp(1.125rem, 1.125rem + 0.25vw, 1.375rem);
   --text-headline--line-height: 1.2;
   --text-headline--font-weight: 700;
 
-  --text-subhead: 24px;
+  --text-subhead: clamp(1.25rem, 1.25rem + 0.25vw, 1.5rem);
   --text-subhead--line-height: 1.3;
   --text-subhead--font-weight: 400;
 
-  --text-body-lg: 18px;
+  --text-body-lg: clamp(1rem, 1rem + 0.125vw, 1.125rem);
   --text-body-lg--line-height: 1.3;
   --text-body-lg--font-weight: 400;
 
-  --text-body: 15px;
+  --text-body: clamp(0.9375rem, 0.9375rem + 0.0625vw, 1rem);
   --text-body--line-height: 1.3;
   --text-body--font-weight: 400;
 
@@ -74,7 +74,7 @@
   --text-body-sm--line-height: 1.4;
   --text-body-sm--font-weight: 500;
 
-  --text-caption: 13px;
+  --text-caption: clamp(0.8125rem, 0.8125rem + 0.0625vw, 0.875rem);
   --text-caption--line-height: 1.2;
   --text-caption--font-weight: 500;
 
@@ -82,7 +82,7 @@
   --text-micro--line-height: 1.2;
   --text-micro--font-weight: 400;
 
-  --text-button: 14px;
+  --text-button: clamp(0.8125rem, 0.8125rem + 0.0625vw, 0.875rem);
   --text-button--line-height: 1;
   --text-button--font-weight: 500;
 }
